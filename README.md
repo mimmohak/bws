@@ -1,4 +1,5 @@
 Bitcoin W Spectrum Specifications
+
 Coin Generation: Pure Proof of Stake
 
 100,00,000 Coins 
