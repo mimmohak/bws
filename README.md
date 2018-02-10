@@ -1,10 +1,13 @@
-# bws
-BitcoinWSpectrum Proof of Stake Wallet
-Bitcoin W Spectrum is a rebrand of BitcoinWallStreet
+Bitcoin W Spectrum Specifications
+Coin Generation: Pure Proof of Stake
 
-Coin Features are: 
+RPC Port: 46646
 
-Full Proof of Stake
-2 Hour Minimum stake 
-9% POS
+Port: 46647
+
+Time to Maturity: 60 Confirmations
+
+Proof of Stake Reward: Random
+
+Minimum Coin Stake Age: 2 hours
 
