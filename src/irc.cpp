@@ -189,7 +189,7 @@ bool GetIPFromIRC(SOCKET hSocket, string strMyName, CNetAddr& ipRet)
 void ThreadIRCSeed(void* parg)
 {
     // Make this thread recognisable as the IRC seeding thread
-    RenameThread("bitcoinwallstreet-ircseed");
+    RenameThread("bitcoinwspectrum-ircseed");
 
     try
     {
@@ -302,16 +302,16 @@ void ThreadIRCSeed2(void* parg)
         }
 
         if (fTestNet) {
-            Send(hSocket, "JOIN #bitcoinwallstreetizerTEST\r");
-            Send(hSocket, "WHO #bitcoinwallstreetizerTEST\r");
+            Send(hSocket, "JOIN #bitcoinwspectrumizerTEST\r");
+            Send(hSocket, "WHO #bitcoinwspectrumizerTEST\r");
         } else {
-            // randomly join #bitcoinwallstreet00-#xonecoin05
+            // randomly join #bitcoinwspectrum00-#xonecoin05
             //int channel_number = GetRandInt(5);
             int channel_number = 0;
             // Channel number is always 0 for initial release
             //int channel_number = 0;
-            Send(hSocket, strprintf("JOIN #bitcoinwallstreetizer%02d\r", channel_number).c_str());
-            Send(hSocket, strprintf("WHO #bitcoinwallstreetizer%02d\r", channel_number).c_str());
+            Send(hSocket, strprintf("JOIN #bitcoinwspectrumizer%02d\r", channel_number).c_str());
+            Send(hSocket, strprintf("WHO #bitcoinwspectrumizer%02d\r", channel_number).c_str());
         }
 
         int64_t nStart = GetTime();

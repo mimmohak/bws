@@ -960,7 +960,7 @@ static std::string FormatException(std::exception* pex, const char* pszThread)
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(NULL, pszModule, sizeof(pszModule));
 #else
-    const char* pszModule = "bitcoinwallstreet";
+    const char* pszModule = "bitcoinwspectrum";
 #endif
     if (pex)
         return strprintf(
@@ -1003,13 +1003,13 @@ void PrintExceptionContinue(std::exception* pex, const char* pszThread)
 boost::filesystem::path GetDefaultDataDir()
 {
     namespace fs = boost::filesystem;
-    // Windows < Vista: C:\Documents and Settings\Username\Application Data\bitcoinwallstreet
-    // Windows >= Vista: C:\Users\Username\AppData\Roaming\bitcoinwallstreet
-    // Mac: ~/Library/Application Support/bitcoinwallstreet
-    // Unix: ~/.bitcoinwallstreet
+    // Windows < Vista: C:\Documents and Settings\Username\Application Data\bitcoinwspectrum
+    // Windows >= Vista: C:\Users\Username\AppData\Roaming\bitcoinwspectrum
+    // Mac: ~/Library/Application Support/bitcoinwspectrum
+    // Unix: ~/.bitcoinwspectrum
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "bitcoinwallstreet";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "bitcoinwspectrum";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -1021,10 +1021,10 @@ boost::filesystem::path GetDefaultDataDir()
     // Mac
     pathRet /= "Library/Application Support";
     fs::create_directory(pathRet);
-    return pathRet / "bitcoinwallstreet";
+    return pathRet / "bitcoinwspectrum";
 #else
     // Unix
-    return pathRet / ".bitcoinwallstreet";
+    return pathRet / ".bitcoinwspectrum";
 #endif
 #endif
 }
@@ -1066,7 +1066,7 @@ const boost::filesystem::path &GetDataDir(bool fNetSpecific)
 
 boost::filesystem::path GetConfigFile()
 {
-    boost::filesystem::path pathConfigFile(GetArg("-conf", "bitcoinwallstreet.conf"));
+    boost::filesystem::path pathConfigFile(GetArg("-conf", "bitcoinwspectrum.conf"));
     if (!pathConfigFile.is_complete()) pathConfigFile = GetDataDir(false) / pathConfigFile;
     return pathConfigFile;
 }
@@ -1097,7 +1097,7 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
 
 boost::filesystem::path GetPidFile()
 {
-    boost::filesystem::path pathPidFile(GetArg("-pid", "bitcoinwallstreetd.pid"));
+    boost::filesystem::path pathPidFile(GetArg("-pid", "bitcoinwspectrumd.pid"));
     if (!pathPidFile.is_complete()) pathPidFile = GetDataDir() / pathPidFile;
     return pathPidFile;
 }
@@ -1227,10 +1227,10 @@ void AddTimeData(const CNetAddr& ip, int64_t nTime)
                 if (!fMatch)
                 {
                     fDone = true;
-                    string strMessage = _("Warning: Please check that your computer's date and time are correct! If your clock is wrong bitcoinwallstreet will not work properly.");
+                    string strMessage = _("Warning: Please check that your computer's date and time are correct! If your clock is wrong bitcoinwspectrum will not work properly.");
                     strMiscWarning = strMessage;
                     printf("*** %s\n", strMessage.c_str());
-                    uiInterface.ThreadSafeMessageBox(strMessage+" ", string("bitcoinwallstreet"), CClientUIInterface::OK | CClientUIInterface::ICON_EXCLAMATION);
+                    uiInterface.ThreadSafeMessageBox(strMessage+" ", string("bitcoinwspectrum"), CClientUIInterface::OK | CClientUIInterface::ICON_EXCLAMATION);
                 }
             }
         }
