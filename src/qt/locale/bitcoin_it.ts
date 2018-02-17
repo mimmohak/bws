@@ -225,7 +225,7 @@ Questo prodotto include software sviluppato dal progetto OpenSSL per l&apos;uso 
     <message>
         <location line="+1"/>
         <source>Enter the old and new passphrase to the wallet.</source>
-        <translation>Inserisci la vbitcoinwallstreeta e la nuova passphrase per il portamonete.</translation>
+        <translation>Inserisci la vbitcoinwspectruma e la nuova passphrase per il portamonete.</translation>
     </message>
     <message>
         <location line="+46"/>
