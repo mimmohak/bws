@@ -257,8 +257,8 @@
        </property>
        <property name="minimumSize">
         <size>
-         <width>100</width>
-         <height>100</height>
+         <width>50</width>
+         <height>400</height>
         </size>
        </property>
        <property name="autoFillBackground">
